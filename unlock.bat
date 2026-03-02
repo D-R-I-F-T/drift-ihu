@@ -1,0 +1,1 @@
+"C:\Program Files\VeraCrypt\VeraCrypt.exe" /v "DRIFT_secure"

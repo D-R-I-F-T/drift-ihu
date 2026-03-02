@@ -1,0 +1,13 @@
+Copyright © 2026 Marios-Rafail Souris
+
+All rights reserved.
+
+This website and its source code, including but not limited to HTML, CSS, JavaScript, design, layout and graphics, are the intellectual property of Marios-Rafail Souris.
+
+Unauthorized copying, reproduction, modification, distribution, or use of this code, in whole or in part, is strictly prohibited without explicit written permission from the author.
+
+This project is protected under international copyright laws.
+
+Author: Marios- Rafail Souris
+Project: DRIFT-Website
+Year: 2026

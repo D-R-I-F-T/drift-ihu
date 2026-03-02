@@ -1,0 +1,70 @@
+TERMS OF USE
+DRIFT-Website
+Last updated: 2026
+
+Owner: Marios-Rafail Souris
+
+---
+
+1. ACCEPTANCE OF TERMS
+
+By accessing or using this website and its source code, you agree to be bound by these Terms of Use and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this website.
+
+---
+
+2. INTELLECTUAL PROPERTY
+
+All content on this website, including but not limited to:
+
+* source code (HTML, CSS, JavaScript)
+* design and layout
+* visual elements and graphics
+* text and branding
+
+is the exclusive intellectual property of Marios Souris and is protected by international copyright laws.
+
+---
+
+3. RESTRICTIONS
+
+You are strictly prohibited from:
+
+* copying the source code
+* reproducing any part of the website
+* modifying the code or design
+* redistributing the code
+* using the design or structure for your own projects
+* reverse engineering or extracting the source code
+
+without explicit written permission from the owner.
+
+---
+
+4. AUTHORIZED USE
+
+This website is provided for personal viewing and interaction only.
+No permission is granted to use the source code or design for commercial or personal projects.
+
+---
+
+5. VIOLATIONS
+
+Unauthorized use of this website or its source code may result in legal action, including but not limited to copyright infringement claims and financial damages.
+
+---
+
+6. DISCLAIMER
+
+This website is provided "as is" without warranties of any kind.
+
+---
+
+7. CONTACT
+
+For permissions or licensing requests, contact:
+
+Owner: Marios Souris
+
+---
+
+END OF TERMS

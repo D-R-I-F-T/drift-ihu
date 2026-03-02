@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DRIFT-IHU</title>
+        <link rel="stylesheet" href="DRIFT-Style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+         <style>
+        /* 1. Basic Setup & Font */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap');
+
+        :root {
+            --sidebar-blue: #2b90f5; /* Bright blue from image */
+            --sidebar-blue-dark: #1e7bd6; /* Slightly darker for gradient */
+            --text-white: #ffffff;
+            --hover-white: #ffffff;
+            --skew-angle: -10deg; /* The angle of the sidebar */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Light background for contrast */
+            font-family: 'Inter', 'sans-serif';
+            
+        }
+
+        /* 2. Sidebar Container */
+        .sidebar {
+            position: fixed;
+            top: 0px;
+            left: -35px; /* Hide the angled left edge off-screen */
+            width: 280px;
+            height: 100vh;
+            background: linear-gradient(180deg, var(--sidebar-blue) 0%, var(--sidebar-blue-dark) 100%);
+            
+            /* This creates the slanted shape */
+            transform: skewX(var(--skew-angle));
+            
+            display: flex;
+            flex-direction: column;
+            justify-content:space-around; /* Centers menu vertically */
+            box-shadow: 10px 0 20px rgba(0,0,0,0.3); /* The shadow on the right */
+            z-index: 1000;
+        }
+
+        /* 3. Navigation List */
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+        
+        nav li {
+            padding: 5px 5px; /* περισσότερο ύψος */
+            font-size: 18px;    /* μεγαλύτερα γράμματα */
+            font-weight: bold;  /* bold */
+            text-transform: uppercase; /* Κεφαλαία */  
+        }
+
+       .sidebar ul{
+            padding-bottom: 30px;
+       }
+
+        .nav-item {
+            font-size: xx-large;
+            font-style: bolder;
+            width: 100%;
+            margin-bottom: 1px;
+            transition: all 0.3s ease;
+        }
+
+        /* 4. The Link Styling */
+        .nav-link {
+            text-decoration: solid;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            padding: 15px 20px 15px 60px; /* Padding pushes text to right */
+            color: var(--text-white);
+            font-size: 1.2rem;
+            font-weight: 900; /* Bold */
+            font-style: italic; /* Slanted Text */
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            
+            /* IMPORTANT: Un-skew the text so it's readable, 
+               but keep italic style */
+            transform: skewX(calc(var(--skew-angle) * -1)); 
+            
+            transition: all 0.2s ease-in-out;
+        }
+
+        /* 5. The Lightning Icon */
+        .icon {
+            width: 18px;
+            height: 18px;
+            margin-right: 15px;
+            fill: var(--text-white); /* White icon by default */
+            transition: fill 0.2s ease-in-out;
+        }
+
+        /* 6. HOVER EFFECTS (The White Effect) */
+        
+        /* When hovering the list item... */
+        .nav-item:hover {
+            background-color: var(--hover-white);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Glow effect */
+        }
+
+        /* Change text color to blue on hover */
+        .nav-item:hover .nav-link {
+           transform: translateX(10px) skewX(calc(var(--skew-angle) * -1));  /* Slight movement to right */
+            color: var(--sidebar-blue);
+        }
+
+        /* Change icon color to blue on hover */
+        .nav-item:hover .icon {
+            fill: var(--sidebar-blue);
+        }
+    </style>
+    </head>
+    <div class="head-logo">
+                    <a href="#" class="nav-logoText">
+                        <h1 class="logo-text"><b>DRIFT</b></h1>
+                    </a>
+                    <a href="#" class="nav-logoImg">
+                        <img class="photologo" src="Picsart_25-11-17_19-23-13-924.png" width="130px" height="130px" onmouseover="this.src='1000007170.png'" onmouseout="this.src='Picsart_25-11-17_19-23-13-924.png'">
+                    </a>
+    </div>
+    
+    <div class="but">
+        <a href="#" class="nav-logoText">
+            <h1 class="logo-text"><b>DRIFT</b></h1>
+        </a>
+        <span class="logo">
+        <a href="#" class="nav-logoImg">
+            <img class="photologo" src="Picsart_25-11-17_19-23-13-924.png" width="130px" height="130px" onmouseover="this.src='1000007170.png'" onmouseout="this.src='Picsart_25-11-17_19-23-13-924.png'">
+        </a>
+        </span>
+        <button class="nav-toggle" aria-label="toggle navigation" onclick="toggleNav()">
+            <img class="ham" src="ham2.png">
+        </button>
+    </div>
+
+    <div class="bac-nav">
+        <header class="head">
+	<!-- for Social Media Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<div class="sidebar-wrapper">           
+    <nav class="sidebar">
+        <button class="nav-toggle" aria-label="toggle navigation" onclick="toggleNav()">
+       <img class="close" src="close.png" width="40px" height="40px"><span class="closetxt">close</span>
+       </button>
+        <ul class="nav-links">
+            <li class="nav-item">
+                <a href="#hero" class="nav-link" data-target="hero">
+                    <!-- SVG Lightning Bolt Icon -->
+                    <img class="light" src="thunder.gif" width="25px" height="25px">
+                    <div class="text">HOME</div>
+                </a>
+            </li>
+            
+            <!-- Active State Example (About Us) -->
+            <li class="nav-item">
+                <a href="#hero2" class="nav-link" data-target="hero2">
+                    <img class="light" src="thunder.gif" width="25px" height="25px">
+                    <div class="text">About Us</div>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#hero3" class="nav-link" data-target="hero3">
+                    <img class="light" src="thunder.gif" width="25px" height="25px">
+                    <div class="text">Our Team</div>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#hero4" class="nav-link" data-target="hero4">
+                    <img class="light" src="thunder.gif" width="25px" height="25px">
+                    <div class="text">Blog</div>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#hero5" class="nav-link" data-target="hero5">
+                    <img class="light" src="thunder.gif" width="25px" height="25px">
+                        <div class="text">Contact Us</div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+        </header>
+    </div>
+    <body>
+        <section class="hero" id="hero">
+            <div class="home-left">
+            <h1>Welcome to <span class="name">DRIFT-IHU</span></h1>
+            <p class="subtitle">Formula Student Racing Team</p>
+            <p class="desc">
+                DRIFT-IHU is the official Formula Student team of the International Hellenic University (IHU), dedicated to designing, building and racing a unique EV Formula Student car
+            </p>
+
+            <a href="#hero2" class="cta-button">LEARN MORE</a>
+            </div>
+
+            <div class="home-right">
+                <h2 class="live-title">
+                    <span class="live-dot"></span> LIVE UPDATE
+                </h2>
+                    <div class="live-box" id="live-box">
+                        <h4 id="live-title"></h4>
+                        <p id="live-text"></p>
+                        <a href="#hero4" class="read-more">Διαβάστε Περισσότερα</a>
+                    </div>
+            </div>
+        </section>
+
+        <section class="hero2" id="hero2">
+        <div class="about-container">
+
+            <!-- Left side: Text -->
+            <div class="about-text">
+            <h2>About Us</h2>
+            <p>DRIFT-IHU was formed in first 2025 at International Hellenic University - Alexandria University City. Not much time has passed since then but we already begun to set out on a long journey. This journey,our journey is driven by curiosity, collaboration, and the desire to create a high-performance race car.</p>
+            <p>From designing and testing to competing in international events, we focus on turning ideas into action and challenges into achievements.</p>
+            </div>
+
+            <!-- Right side: Image -->
+            <div class="about-image">
+            <img src="iem.jpg" alt="DRIFT IHU Team">
+            </div>
+
+        </div>
+        </section>
+
+        <section class="hero3" id="hero3">
+        <div class="team-container">
+
+            <div class="team-card">
+            <h3>Mechanical Engineering Students</h3>
+            <img src="gear.png" alt="Mechanical Engineering Team">
+            <p>Our talented mechanical engineers design and build the backbone of our race cars, from chassis to suspension.</p>
+            </div>
+
+            <div class="team-card">
+            <h3>Electrical Engineering Students</h3>
+            <img src="el.png"  alt="Electrical Engineering Team">
+            <p>They handle everything electric: wiring, sensors, control systems, and power management.</p>
+            </div>
+
+            <div class="team-card">
+            <h3>Software Engineering Students</h3>
+            <img src="com.png"  alt="Software Engineering Team">
+            <p>Our coders develop the software that powers our autonomous systems and ensure the safety and the performance of our vehicle.</p>
+            </div>
+
+            <div class="team-card">
+            <h3>Marketing Team</h3>
+            <img src="ma.png" alt="Marketing Team">
+            <p>The marketing team spreads our story, connects with sponsors, and grows our brand worldwide.</p>
+            </div>
+
+            <div class="team-card">
+            <h3>Social Media Managers</h3>
+            <img src="sc.png" alt="Social Media Team">
+            <p>They manage our online presence, create content, and keep fans updated on our journey.</p>
+            </div>
+
+        </div>
+        </section>
+
+        <section class="hero4" id="hero4">
+    <div class="blog-container">
+
+        <!-- Μεγάλη κάρτα -->
+        <div class="blog-card big-card" onclick="openPost('latest')">
+            <img src="tire.png" class="big-card-img">
+            <div class="big-card-overlay"></div>
+                <div class="card-content">
+                    <h3>PREVENTIVE TECHNICAL INSPECTION OF VEHICLES OF STUDENTS, TEACHING AND ADMINISTRATIVE STAFF OF IHU</h3>
+                </div>
+            </div>
+
+        <!-- Δύο μικρότερες κάρτες -->
+        <div class="small-cards-row">
+
+            <div class="blog-card small-card" onclick="openPost('post1')">
+                
+                    <img src="insta.jpg" class="small-card-img">
+                <div class="card-content">
+                    <h3>Now On Instagram</h3>
+                </div>
+            </div>
+
+            <div class="blog-card small-card" onclick="openPost('post2')">
+                    <img src="logo.jpg" class="small-card-img">
+                <div class="card-content">
+                    <h3>Our Unique Logo</h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Popup -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <img id="popup-image" src="" alt="">
+            <h2 id="popup-title"></h2>
+            <p id="popup-text"></p>
+        </div>
+    </div>
+</section>
+
+        <section class="hero5" id="hero5">
+    <div class="contact-container">
+
+        <!-- LEFT SIDE: CONTACT INFO -->
+        <div class="contact-info-box">
+            <h2>Contact Us</h2>
+            <p class="contact-tagline">
+                We’d love to hear from you! Reach out for collaborations, sponsorships, or questions.
+            </p>
+
+            <div class="info-item">
+                <p><i class="fas fa-map-marker-alt"></i> <a class="map" href="https://maps.app.goo.gl/rsyf1vWJfdnAgKqV8" target="_blank">International Hellenic University - Thessaloniki, Greece</a></p>
+            </div>
+
+            <div class="info-item">
+                <i class="fa-solid fa-envelope"></i>
+                <p><a class="mail" href="mailto:drift.ihu@gmail.com">drift.ihu@gmail.com</a></p>
+            </div>
+
+            <div class="info-item">
+                <i class="fa-solid fa-phone"></i>
+                <p>+30 690 000 0000</p>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://www.instagram.com/_drift.efs_/?igsh=YjA3dHlsZHJ1bWto#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE: CONTACT FORM -->
+        <div class="contact-form-box">
+            <h3>Send us a message</h3>
+
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="text" placeholder="Subject">
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+        <script src="drift-script.js"></script>
+    </body>
+		
+ <!-- NEW FOOTER START -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            
+            <!-- Column 1: About -->
+            <div class="footer-section about">
+                <h2 class="footer-logo">DRIFT<span>-IHU</span></h2>
+                <p>
+                    Designing the future of racing. We are the official Formula Student team of the International Hellenic University.
+                </p>
+                <div class="socials">
+                    <a class="Slink"href="#"><i class="fab fa-facebook"></i></a>
+                    <a class="Slink"href="https://www.instagram.com/_drift.efs_/?igsh=YjA3dHlsZHJ1bWto#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a class="Slink"href="#"><i class="fab fa-linkedin"></i></a>
+                    <a class="Slink"href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Links -->
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#hero2">About Us</a></li>
+                    <li><a href="#hero3">Our Team</a></li>
+                    <li><a href="#hero6">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Contact -->
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> <a class="map" href="https://maps.app.goo.gl/rsyf1vWJfdnAgKqV8" target="_blank">International Hellenic University</a></p>
+                    <p><i class="fas fa-envelope"></i><a class="mail" href="mailto:drift.ihu@gmail.com">drift.ihu@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i> +30 2310 123456</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 DRIFT-IHU Formula Student Team | Designed for Speed</p>
+        </div>
+    </footer>
+    <!-- NEW FOOTER END -->
+    </body>
+</html>

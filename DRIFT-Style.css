@@ -1,0 +1,1277 @@
+/*
+==========================================
+DRIFT-Website
+Author: Marios-Rafail Souris
+Copyright © 2026
+All rights reserved.
+Unauthorized use prohibited.
+==========================================
+*/
+
+body {
+    font-size: large;
+    font-weight: bolder;
+    font-style: italic;
+    background-color: #a3c9f2;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.nav-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    width:300px;
+    height: 250vh;
+    background-color: #2887ec;
+    line-height: 340%;
+    clip-path: polygon(0% 0%, 100% 0%, 60% 100%, 0% 100%);
+    z-index: 10000;
+}
+.nav-logoText{
+    color: #1f1f1f;
+    font-size: 150%;
+    display: inline-block;
+    width: fit-content;
+    text-decoration: none;
+}
+.nav-logoImg{
+    color: #1f1f1f;
+    font-size: 150%;
+    display: inline-block;
+    width: fit-content;
+}
+
+.logo-text{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    line-height:0%;
+    margin: 0;
+    padding: 0;
+    margin-left: 20px;
+    margin-top: 45px;
+}
+.nav-list{
+    list-style: none;
+}
+.nav-link{
+    color: #fefeff;
+    text-decoration: none;
+    font-size: 150%;
+}
+.nav-link:hover{
+    color: #000105;
+}
+.nav-link:active{
+    color: #0400ff;
+}
+a{
+    text-decoration: none;
+}
+.nav-bar ul{
+    margin-top: 0px;
+}
+
+.head-logo {
+    height: 150px;
+    z-index: 4000;
+    display: flex;
+    top: 0;
+    position: fixed;
+    left: 0;
+    align-items:safe;
+    margin-bottom: 20px;
+}
+
+.photologo{
+    margin-left: -40px;
+    margin-top: 30px;
+    padding-top: 10px;
+}
+
+.hero{
+    z-index: 50000;
+    margin-left: 280px;
+    padding-bottom: 750px;
+    background-color: #2887ec;
+    display: flex;
+    color: #090909;
+    font-size: 200%;
+    font-weight: bolder;
+}
+
+
+.hero6{
+    margin-left: 280px;
+    padding-bottom: 750px;
+    background-color: #2887ec;
+    display: flex;
+    color: #090909;
+    font-size: 200%;
+    font-weight: bolder;
+}
+
+@keyframes slideInFromTop {
+  /* Αρχική Κατάσταση */
+  0% {
+    transform: translateX(-100%);/* Ξεκινάει ψηλά, εκτός οθόνης */
+    opacity: 0;
+  }
+  
+  /* Τελική Κατάσταση */
+  100% {
+    transform: translateX(0); /* Έρχεται στην κανονική του θέση */
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeftPlagio {
+  /* Αρχική Κατάσταση: Εκτός οθόνης και αόρατο */
+  0% {
+    transform: translateX(-100%) skewX(var(--skew-angle));
+    opacity: 0;
+  }
+  
+  /* Τελική Κατάσταση: Έρχεται στη θέση του και διατηρεί το skew */
+  100% {
+    /* Σημαντικό: Το translateX(0) το φέρνει στη θέση του. */
+    /* Το skewX(var(--skew-angle)) διατηρεί το πλαϊνό σχέδιο. */
+    transform: translateX(0) skewX(var(--skew-angle)); 
+    opacity: 1;
+  }
+}
+
+.sidebar{
+    z-index: 1000;
+  transform: skewX(var(--skew-angle));
+  animation: slideInFromLeftPlagio 0.5s ease-out forwards; /* Διάρκεια 0.5 δευτερόλεπτα, easing ease-out */
+}
+.nav-link {
+    transform: skewX(calc(var(--skew-angle) * -1));
+}
+
+.logo-text{
+    animation: slideInFromTop 0.7s ease-out forwards;
+}
+
+.photologo{
+    animation: slideInFromTop 0.7s ease-out forwards;
+}
+
+@keyframes pop-in {
+  /* 0% & 100% (Αρχή και Τέλος) */
+  0%, 100% {
+    transform: scale(1); /* Κανονικό μέγεθος */
+    opacity: 1; 
+  }
+  
+  /* 50% (Κορύφωση του Pop) */
+  50% {
+    transform: scale(1.15); /* Μεγαλώνει 15% */
+    opacity: 1;
+  }
+}
+
+/*.nav-item:hover {
+  animation: pop-in 0.4s ease-in-out; /* Διάρκεια 0.3 δευτερόλεπτα, easing ease-in-out 
+}*/
+
+.nav-item {
+    transition: transform 0.15s ease-out;
+    animation: slideInFromTop 0.5s ease-out forwards;
+}
+
+.nav-item:hover {
+    transform: scale(1.12); /* “Πετάγεται” προς τα έξω */
+    animation: slideInFromTop 0.5s ease-out forwards;
+}
+
+.nav-item{
+    position: relative;
+    z-index: 100;
+    width: fit-content;
+    display:block;
+    cursor: pointer; /* Αλλάζει ο κέρσορας σε pointer για να δείξει ότι είναι κλικαμπλ */
+}
+
+@keyframes slideInFromLeft {
+  /* Αρχική Κατάσταση */
+  0% {
+    transform: translateY(-100%);/* Ξεκινάει αριστερά, εκτός οθόνης */
+    opacity: 0;
+  }
+  
+  /* Τελική Κατάσταση */
+  100% {
+    transform: translateY(0); /* Έρχεται στην κανονική του θέση */
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  /* Αρχική Κατάσταση: Αόρατο */
+  0% {
+    opacity: 0;
+  }
+  
+  /* Τελική Κατάσταση: Πλήρως Ορατό */
+  100% {
+    opacity: 1;
+  }
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+.light{
+  position:relative;
+  right: 2px;
+  top: 1px; 
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-item:hover .light{
+    opacity: 1;
+}
+
+
+/* --- FOOTER STYLES (MATCH HERO5) --- */
+
+.site-footer {
+    margin-left: 280px;
+    background: linear-gradient(135deg, #08111c, #0a1c2b, #02070c);
+    color: #d0eaff;
+    padding-top: 50px;
+    padding-bottom: 0px;
+    border-top: 1px solid rgba(0, 140, 255, 0.3);
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 0 20px;
+    min-width: 250px;
+}
+
+/* Titles */
+.footer-logo {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-style: italic;
+    color: #59c3ff; /* neon blue */
+}
+
+.footer-logo span {
+    color: #008cff;
+}
+
+.footer-section h3 {
+    color: #59c3ff;
+    margin-bottom: 20px;
+    font-style: italic;
+    border-bottom: 2px solid rgba(0, 140, 255, 0.4);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Paragraphs */
+.footer-section p {
+    font-size: 0.95rem;
+    color: #bfe0ff;
+    line-height: 1.6;
+}
+
+/* Links */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #e4f5ff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #59c3ff;
+    text-shadow: 0 0 10px rgba(0, 140, 255, 0.7);
+    padding-left: 10px;
+}
+
+/* Social Icons */
+.socials {
+    margin-top: 20px;
+}
+
+.socials a {
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    background: rgba(0, 10, 20, 0.6);
+    color: #59c3ff;
+    text-align: center;
+    line-height: 42px;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: 0.3s;
+    border: 1px solid rgba(0, 140, 255, 0.3);
+    backdrop-filter: blur(6px);
+}
+
+.socials a:hover {
+    transform: translateY(-4px);
+    background: rgba(0, 35, 70, 0.7);
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(0, 140, 255, 1);
+}
+
+/* Contact info colors */
+.contact-info i {
+    color: #59c3ff;
+}
+
+.contact-info .mail,
+.contact-info .map {
+    color: #d4ebff;
+}
+
+.contact-info .mail:hover,
+.contact-info .map:hover {
+    color: #59c3ff;
+    text-decoration: underline;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    background: rgba(0, 10, 20, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.85rem;
+    color: #9fc8ff;
+    border-top: 1px solid rgba(0, 140, 255, 0.25);
+}
+/*HOME*/
+
+.hero {
+    margin-left: 280px;
+    padding: 50px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #000000, #307df9, #26011f);
+    color: #d0eaff;
+
+    overflow: hidden;
+    z-index: 1; /* Χαμηλότερο από το menu */
+}
+
+/* LEFT SIDE */
+.home-left {
+    max-width: 55%;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 900;
+}
+
+.hero h1 span {
+    color: #3967ff;
+    text-shadow: 0 0 10px #00060a;
+}
+
+.subtitle {
+    font-size: 2rem;
+    opacity: 0.9;
+    margin: 15px 0;
+}
+
+.desc {
+    font-size: 2rem;
+    opacity: 0.85;
+}
+
+/* BUTTON */
+.cta-button {
+    padding: 12px 22px;
+    background: #2887ec;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: #4db0ff;
+    box-shadow: 0 0 15px #4db0ff;
+}
+/* RIGHT SIDE */
+.home-right {
+    width: 35%;
+    max-width: 380px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 2px solid #2887ec;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 0 18px rgba(0, 140, 255, 0.4);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 12px rgba(0, 162, 255, 0.6), 0 0 22px rgba(0, 162, 255, 0.4), inset 0 0 12px rgba(0, 162, 255, 0.3); 
+    animation: neonPulse 2.4s infinite ease-in-out;
+
+}
+
+.live-title {
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.live-dot {
+    width: 12px;
+    height: 12px;
+    background: red;
+    border-radius: 50%;
+    animation: blink 1s infinite;
+    box-shadow: 0 0 8px red;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+}
+
+/* LIVE BOX */
+.live-box {
+    background: rgba(0,0,0,0.35);
+    border: 2px solid #2887ec;
+    padding: 20px;
+    border-radius: 12px;
+    color: #d8edff;
+    box-shadow: 0 0 15px rgba(0,140,255,0.3);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.live-box h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #59c3ff;
+}
+
+.live-box p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.read-more {
+    display: inline-block;
+    color: #fff;
+    background: #2887ec;
+    border-radius: 2px;
+    padding: 8px 12px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 0.95rem;
+}
+
+.read-more:hover {
+    background: #4db0ff;
+    box-shadow: 0 0 12px #4db0ff;
+}
+
+
+.loading {
+    opacity: 0.7;
+    font-size: 0.95rem;
+}
+
+.neon-line {
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    background: #2887ec;
+    box-shadow: 0 0 15px #2887ec;
+    animation: neonPulse 2s infinite;
+}
+
+.left-line { left: 0; }
+.right-line { right: 0; }
+
+@keyframes neonPulse {
+    0%, 100% { opacity: 0.7; box-shadow: 0 0 10px #2887ec; }
+    50% { opacity: 1; box-shadow: 0 0 20px #58b5ff; }
+}
+
+.live-box p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+/* SMALL NEON PULSE */
+.live-box {
+    animation: pulseGlow 3s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 14px rgba(0,140,255,0.25); }
+    50% { box-shadow: 0 0 25px rgba(0,140,255,0.45); }
+    100% { box-shadow: 0 0 14px rgba(0,140,255,0.25); }
+}
+
+
+
+/* --- CONTACT SECTION WRAPPER --- */
+.hero5 {
+    margin-left: 280px;
+    padding-bottom: 750px;
+    background: linear-gradient(135deg, #08111c, #0a1c2b, #02070c);
+    padding: 100px 0; /* μικρότερο από 80px */
+    display: flex;
+    justify-content: center;
+}
+
+.contact-container {
+    width: 90%;    
+    max-width: 1400px; 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px; 
+}
+
+/* --- LEFT BOX (INFO) --- */
+.info-item .mail{
+   color: inherit;         /* Κληρονομεί το χρώμα του γονέα */
+    text-decoration: none;  /* Αφαιρεί underline */
+    transition: color 0.3s ease
+}
+.contact-info-box {
+    background: rgba(0, 15, 30, 0.5);
+    border: 1px solid rgba(0, 140, 255, 0.4);
+    backdrop-filter: blur(10px);
+    padding: 38px;
+    border-radius: 18px;
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 140, 255, 0.25);
+    animation: fadeInLeft 0.9s ease forwards;
+}
+
+.contact-info-box h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #59c3ff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.contact-tagline {
+    font-size: 15px;
+    margin-bottom: 25px;
+    color: #d0eaff;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+    font-size: 15px;
+    gap: 12px;
+    color: #cfeaff;
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateX(6px);
+}
+
+.info-item i {
+    color: #59c3ff;
+    font-size: 20px;
+    text-shadow: 0 0 8px rgba(0, 140, 255, 0.7);
+}
+
+.info-item a {
+    pointer-events: auto;
+    position: relative;
+    z-index: 50;
+    cursor: pointer;
+    color: inherit;
+}
+.contact-info {
+    position: relative;
+    z-index: 5;
+}
+
+.contact-info a {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.contact-info a{
+    pointer-events: auto;
+}
+.contact-info a {
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.hero5 {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-container {
+    position: relative;
+    z-index: 50;
+}
+.contact-info a {
+    position: relative !important;
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+}
+
+
+/* --- SOCIAL ICONS --- */
+.social-icons {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    font-size: 24px;
+    color: #59c3ff;
+    transition: 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-4px);
+    text-shadow: 0 0 12px rgba(0, 140, 255, 1);
+    color: white;
+}
+
+/* --- RIGHT BOX (FORM) --- */
+.contact-form{
+    align-items: center;
+}
+.contact-form-box {
+    background: rgba(0, 15, 30, 0.5);
+    border: 1px solid rgba(0, 140, 255, 0.4);
+    backdrop-filter: blur(10px);
+    padding: 38px;
+    border-radius: 18px;
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 140, 255, 0.25);
+    animation: fadeInRight 0.9s ease forwards;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-form-box h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #59c3ff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 90%;
+    max-width: 420px;
+    padding: 14px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 140, 255, 0.3);
+    background: rgba(0, 10, 20, 0.6);
+    color: white;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s ease;
+    align-items: center;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #59c3ff;
+    box-shadow: 0 0 12px rgba(0, 140, 255, 0.4);
+}
+
+.contact-form textarea {
+    height: 140px;
+    resize: none;
+    align-items:center;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #008cff, #0066cc);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 140, 255, 0.4);
+}
+
+.contact-form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(0, 140, 255, 0.7);
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+/* PULSING NEON BORDER */
+.contact-info-box,
+.contact-form-box {
+    position: relative;
+    border: 2px solid rgba(0, 162, 255, 0.6);
+    box-shadow: 0 0 12px rgba(0, 162, 255, 0.6), 0 0 22px rgba(0, 162, 255, 0.4), inset 0 0 12px rgba(0, 162, 255, 0.3); 
+    animation: neonPulse 2.4s infinite ease-in-out;
+}
+
+@keyframes neonPulse {
+    0% {
+        box-shadow:
+            0 0 8px rgba(0, 162, 255, 0.45),
+            0 0 18px rgba(0, 162, 255, 0.3),
+            inset 0 0 8px rgba(0, 162, 255, 0.25);
+        border-color: rgba(0, 162, 255, 0.5);
+    }
+    50% {
+        box-shadow:
+            0 0 20px rgba(0, 162, 255, 1),
+            0 0 35px rgba(0, 162, 255, 0.9),
+            inset 0 0 16px rgba(0, 162, 255, 0.6);
+        border-color: rgba(0, 200, 255, 1);
+    }
+    100% {
+        box-shadow:
+            0 0 8px rgba(0, 162, 255, 0.45),
+            0 0 18px rgba(0, 162, 255, 0.3),
+            inset 0 0 8px rgba(0, 162, 255, 0.25);
+        border-color: rgba(0, 162, 255, 0.5);
+    }
+}
+
+.hero4 {
+    background: linear-gradient(135deg, #05080f, #0a1624, #02060b);
+    margin-left: 280px;
+    padding: 60px 30px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+
+.blog-container {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* BIG CARD */
+.big-card {
+    width: 100%;
+    height: 22rem;
+    border-radius: 18px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0,140,255,0.25);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+
+.big-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(0,160,255,0.45);
+}
+
+.big-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(55%) blur(1px);
+    transition: filter .3s ease;
+}
+
+.big-card:hover .big-card-img {
+    filter: brightness(70%) blur(0);
+}
+
+.big-card h3 {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 900;
+    text-shadow: 0 0 15px rgba(0,140,255,0.6);
+    font-style: italic;
+}
+
+/* SMALL CARDS */
+
+.small-card {
+    flex: 1;
+    height: 14rem;
+    border-radius: 14px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0,140,255,0.2);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.small-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(0,160,255,0.35);
+}
+
+.small-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%) blur(0.7px);
+    transition: filter .3s ease;
+}
+
+.small-card:hover .small-card-img {
+    filter: brightness(75%) blur(0);
+}
+
+.small-card h3 {
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 800;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    font-style: italic;
+}
+.small-cards-row{
+    display: flex;
+    width: 100%;
+    gap: 30px;
+}
+/* POPUP */
+.popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+}
+
+.popup-content {
+    background: #0a1624;
+    border: 2px solid #2887ec;
+    border-radius: 18px;
+    width: 70%;
+    max-height: 80vh;
+    padding: 30px;
+    color: white;
+    overflow-y: auto;
+    box-shadow: 0 0 30px rgba(0,140,255,0.4);
+    animation: popIn .3s ease-out forwards;
+}
+
+.popup-content img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.close-btn {
+    font-size: 2rem;
+    cursor: pointer;
+    float: right;
+    color: #fff;
+}
+
+.hero2 {
+    margin-left: 280px;
+    padding: 100px 30px;
+    background: linear-gradient(135deg, #2a6aff, #0a1624, #1c5192);
+    color: #d0eaff;
+    display: flex;
+    justify-content: center;
+}
+.about-container {
+    display: flex;
+    max-width: 1400px;
+    width: 100%;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+    font-size: 1.5rem;
+    line-height: 1.7;
+}
+
+.about-text h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #59c3ff;
+    text-shadow: 0 0 15px rgba(0, 140, 255, 0.6);
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 18px;
+    box-shadow: 0 0 25px rgba(0,140,255,0.4);
+    animation: neonPulse 2.4s infinite ease-in-out;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .hero2 {
+        margin-left: 0;
+        padding: 60px 20px;
+    }
+    .about-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+.hero3 {
+  margin-left: 280px; /* για sidebar */
+  padding: 60px 30px;
+  background: linear-gradient(135deg, #05080f, #1d426c, #02060b);
+  color: #d0eaff;
+}
+
+
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 στην πρώτη σειρά */
+  grid-auto-rows: auto;
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.team-card {
+  background: rgba(0, 15, 30, 0.5);
+  border: 2px solid rgba(0, 140, 255, 0.5);
+  border-radius: 18px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 162, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-container .team-card:nth-child(n+4) {
+  grid-column: span 1; /* 4η και 5η κάρτα στην επόμενη σειρά */
+}
+
+.team-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.team-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.team-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.team-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 162, 255, 0.6);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .hero3 {
+    margin-left: 0;
+    padding: 40px 16px;
+  }
+}
+
+@keyframes popIn {
+    from { transform: scale(.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .hero4 { margin-left: 0; }
+    .small-cards { flex-direction: column; }
+}
+
+
+
+/* Animation για pop-in */
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive για κινητά */
+@media (max-width: 1024px) {
+    .popup-content {
+        padding: 20px;
+    }
+}
+
+/*responsive design*/
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.bac-nav {
+    background-color: rgb(255, 255, 255);/* ίδιο χρώμα με το body */
+    width: 280px;
+    height: 100%; /* όσο ψηλό είναι το header σου */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 500;  /* πάνω από το body */
+    transition: transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+} 
+
+ .nav-toggle{
+    display: none;
+ }
+ .but{
+    display: none;
+}
+.close{
+    display: none;
+}
+@media (max-width: 1024px) {  
+
+    .hero4 {
+        margin-left: 0;
+        padding: 60px 16px;
+    }
+
+    .big-card {
+        height: 18rem;
+    }
+
+    .small-cards-row {
+        flex-direction: column;
+    }
+
+    .small-card {
+        height: 14rem;
+    }
+
+
+    .hero {
+        margin-left: 0;
+        padding: 100px 20px 60px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-left, .home-right {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .home-right {
+        margin-top: 40px;
+    }
+
+    .hero h1 {
+        font-size: 2.3rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .desc {
+        font-size: 1rem;
+    }
+
+    .but{
+        position: absolute;
+        display: flex;
+        top: 0;
+        left: 0;
+        height: 80px;
+        width: 100%;
+        background: linear-gradient(135deg, #0073ff, #aab5bd, #0f7ef4);
+        z-index: 150;
+    }
+
+    .close{
+        display: block;
+        position: absolute;
+        left: 12px;
+        top: 10px;
+        cursor: pointer;
+    }
+    .sidebar .close{
+        display: block;
+        width: 48px;
+        height: 48px;
+    }
+
+    .nav-toggle {
+        position: absolute;
+        display: flex;
+        left: 12px;
+        top: 7px;
+        z-index: 1000;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        padding: 5px;   
+    }
+    .nav-toggle img {
+        display: block;
+        width: 60px;
+        height: 60px;
+    }
+    .nav-toggle:hover{
+        animation: pop-in 0.7s ease;
+    }
+    .close:hover{
+        animation: pop-in 0.7s ease;
+    }
+    .bac-nav{
+        transform: translateX(-150%);
+    }
+    
+    .head-logo{
+        transform: translateX(-100%);
+    }
+    .hero, 
+    .hero2, 
+    .hero3,
+    .hero4,
+    .hero5,
+    .hero6,
+    .site-footer{
+        margin-left: 0;
+    }
+
+.bac-nav.open {
+    transform: translateX(0); /* Slide-in */
+}
+
+.closetxt{
+    color: #000000;
+    position: absolute;
+    left: 60px;
+    bottom: -37px;
+     font-size: 25px; /* ↑ Μεγαλώνει το κείμενο */
+    font-weight: 600;
+}
+
+.nav-logoText{
+    font-family: 'Roboto', sans-serif;
+    position:absolute;
+    top: 23px;
+    right: 110px;
+    font-size:medium;
+    font-weight: bolder;
+}
+.photologo{
+    position: absolute;
+    right: 0px;
+    bottom: -8px;
+    width: 110px;
+    height: 110px;
+}
+body, .sidebar, .closediv, .closetxt, .nav-link {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+html {
+    -webkit-text-size-adjust: 100%; /* Safari/Chrome iOS */
+    -ms-text-size-adjust: 100%;    /* Edge/IE */
+}
+.logo-text, .nav-logoText, .nav-logoImg h1 {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif; /* Google Font + fallback */
+    font-weight: 900;   /* bold */
+    font-style: italic; /* slanted */
+    line-height: 1;     /* σταθερό */
+    margin: 0;
+    padding: 0;
+}
+}
+
+@media (max-width: 1024px) {
+  .team-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .team-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* DRIFT Site Original Design by Marios-Rafail Souris - 2026 */
+
+
+    
+
+    
