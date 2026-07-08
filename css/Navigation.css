@@ -1,0 +1,302 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap';
+
+/*
+==========================================
+DRIFT-Website
+Author: Marios-Rafail Souris
+Copyright © 2026
+All rights reserved.
+Unauthorized use prohibited.
+==========================================
+*/
+
+.sidebar {
+  position: fixed;
+  top: 0;
+
+  left: -35px;
+
+  width:  19vw;
+  height: 100vh;
+  min-width: 260px; /* Δεν θα γίνει ποτέ μικρότερη από αυτό για να διαβάζεται */
+  max-width: 320px; /* Δεν θα γίνει ποτέ τεράστια σε μεγάλες οθόνες */
+
+  background: linear-gradient(180deg, var(--sidebar-blue) 0%, var(--sidebar-blue-dark) 100%);
+  transform: skewX(var(--skew-angle));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  box-shadow: 10px 0 20px rgba(0,0,0,0.3);
+  z-index: 1000;
+  /* Προσθήκη του animation εδώ: */
+  animation: slideInFromLeftPlagio 0.5s ease-out forwards; 
+
+  
+}
+
+.sidebar ul{
+    padding-bottom: 30px;
+}
+
+
+ .nav-toggle{
+    display: none;
+ }
+ .but{
+    display: none;
+}
+.close{
+    display: none;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+nav li {
+            padding: 5px 5px; /* περισσότερο ύψος */
+            font-size: 18px;    /* μεγαλύτερα γράμματα */
+            font-weight: bold;  /* bold */
+            text-transform: uppercase; /* Κεφαλαία */  
+}
+
+.nav-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-bottom: 1px;
+  font-size: xx-large;
+  font-weight: bolder; 
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.3s ease, transform 0.15s ease-out;
+  animation: slideInFromTop 0.5s ease-out forwards;
+}
+
+.nav-item:hover {
+            background-color: var(--hover-white);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Glow effect */
+            transform: scale(1.12); /* “Πετάγεται” προς τα έξω */
+            animation: slideInFromTop 0.5s ease-out forwards;
+        }
+
+/* Change text color to blue on hover */
+.nav-item:hover .nav-link {
+    transform: translateX(10px) skewX(calc(var(--skew-angle) * -1));  /* Slight movement to right */
+    color: var(--sidebar-blue);
+}    
+
+/* Change icon color to blue on hover */
+.nav-item:hover .icon {
+    fill: var(--sidebar-blue);
+}
+
+.nav-item:hover .light{
+    opacity: 1;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 15px 20px 15px 60px; /* Padding pushes text to right */
+  color: var(--text-white);     /* Καθαρό λευκό μέσω μεταβλητής */
+  font-size: 1.5rem;            /* Αυξήθηκε για να αντιστοιχεί στο 150% */
+  font-weight: 900;             /* Bold */
+  font-style: italic;           /* Slanted Text */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  
+  /* IMPORTANT: Un-skew the text so it's readable, 
+     but keep italic style */
+  transform: skewX(calc(var(--skew-angle) * -1)); 
+  
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-link:hover{
+    color: #000105;
+}
+
+.nav-link:active{
+    color: #0400ff;
+}
+
+/* The Lightning Icon */
+.icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 15px;
+    fill: var(--text-white); /* White icon by default */
+    transition: fill 0.2s ease-in-out;
+}
+        
+.nav-bar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    width:300px;
+    height: 250vh;
+    background-color: #2887ec;
+    line-height: 340%;
+    clip-path: polygon(0% 0%, 100% 0%, 60% 100%, 0% 100%);
+    z-index: 10000;
+}
+
+.nav-bar ul{
+    margin-top: 0px;
+}
+
+.nav-logoText{
+    color: #1f1f1f;
+    font-size: 150%;
+    display: inline-block;
+    width: fit-content;
+    text-decoration: none;
+}
+.nav-logoImg{
+    color: #1f1f1f;
+    font-size: 150%;
+    display: inline-block;
+    width: fit-content;
+}
+
+.logo-text {
+
+    margin-left: 25px !important;
+    margin-top: 15px !important;
+    animation: slideInFromTop 0.7s ease-out forwards;
+}
+
+.logo-text, .nav-logoText, .nav-logoImg h1 {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif; /* Google Font + fallback */
+    font-weight: 900;   /* bold */
+    font-style: italic; /* slanted */
+    line-height: normal;     /* σταθερό */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list{
+    list-style: none;
+}
+
+.head-logo {
+    height: auto;
+    z-index: 4000;
+    display: flex;
+    top: 0;
+    position: fixed;
+    left: 0;
+    align-items:safe;
+    margin-bottom: 4rem;
+    transform: skewX(calc(var(--skew-angle) * -1));
+}
+
+.photologo{
+    margin-left: -10px;
+    margin-top: 30px;
+    padding-top: 10px;
+    display: inline-block; 
+    animation: slideInFromTop 0.7s ease-out forwards;
+}
+
+.hero, .hero6 {
+    margin-left: 280px;
+    padding-bottom: 750px;
+    background-color: #2887ec;
+    display: flex;
+    color: hsl(0, 100%, 99%);
+    font-size: 200%;
+    font-weight: bolder;
+}
+
+.hero{
+    z-index: 50;
+}
+
+@keyframes slideInFromTop {
+  /* Αρχική Κατάσταση */
+  0% {
+    transform: translateX(-100%);/* Ξεκινάει ψηλά, εκτός οθόνης */
+    opacity: 0;
+  }
+  
+  /* Τελική Κατάσταση */
+  100% {
+    transform: translateX(0); /* Έρχεται στην κανονική του θέση */
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeftPlagio {
+  /* Αρχική Κατάσταση: Εκτός οθόνης και αόρατο */
+  0% {
+    transform: translateX(-100%) skewX(var(--skew-angle));
+    opacity: 0;
+  }
+  
+  /* Τελική Κατάσταση: Έρχεται στη θέση του και διατηρεί το skew */
+  100% {
+    /* Σημαντικό: Το translateX(0) το φέρνει στη θέση του. */
+    /* Το skewX(var(--skew-angle)) διατηρεί το πλαϊνό σχέδιο. */
+    transform: translateX(0) skewX(var(--skew-angle)); 
+    opacity: 1;
+  }
+}
+
+@keyframes pop-in {
+  /* 0% & 100% (Αρχή και Τέλος) */
+  0%, 100% {
+    transform: scale(1); /* Κανονικό μέγεθος */
+    opacity: 1; 
+  }
+  
+  /* 50% (Κορύφωση του Pop) */
+  50% {
+    transform: scale(1.15); /* Μεγαλώνει 15% */
+    opacity: 1;
+  }
+}
+
+
+@keyframes slideInFromLeft {
+  /* Αρχική Κατάσταση */
+  0% {
+    transform: translateY(-100%);/* Ξεκινάει αριστερά, εκτός οθόνης */
+    opacity: 0;
+  }
+  
+  /* Τελική Κατάσταση */
+  100% {
+    transform: translateY(0); /* Έρχεται στην κανονική του θέση */
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  /* Αρχική Κατάσταση: Αόρατο */
+  0% {
+    opacity: 0;
+  }
+  
+  /* Τελική Κατάσταση: Πλήρως Ορατό */
+  100% {
+    opacity: 1;
+  }
+}
+
+.light{
+  position:relative;
+  right: 2px;
+  top: 1px; 
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}

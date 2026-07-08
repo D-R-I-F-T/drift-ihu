@@ -1,0 +1,97 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap';
+
+/*
+==========================================
+DRIFT-Website
+Author: Marios-Rafail Souris
+Copyright © 2026
+All rights reserved.
+Unauthorized use prohibited.
+==========================================
+*/
+
+.hero3 {
+  margin-left: 0;
+  background: linear-gradient(135deg, #05080f, #1d426c, #02060b);
+  color: #d0eaff;
+  justify-content: flex-start; /* ─── ΦΕΡΝΕΙ ΤΟ ΠΕΡΙΕΧΟΜΕΝΟ ΤΕΡΜΑ ΠΑΝΩ ─── */
+  align-items: flex-start;     /* ─── ΣΤΟΙΧΙΖΕΙ ΤΑ ΠΑΝΤΑ ΑΡΙΣΤΕΡΑ ─── */
+  height: 100vh;           /* Σταθερό ύψος ακριβώς όσο η οθόνη */
+  padding: 3rem 4rem;      /* Μειώθηκε το padding πάνω-κάτω (από 6rem σε 3rem) */
+  box-sizing: border-box;  /
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #59c3ff;
+  text-shadow: 0 0 15px rgba(0, 140, 255, 0.6);
+  text-align: left;        /* ─── ΤΙΤΛΟΣ ΑΡΙΣΤΕΡΑ ─── */
+  margin-left: 18vw;      /* ─── ΑΠΟΣΤΑΣΗ ΑΠΟ ΤΗΝ ΑΡΙΣΤΕΡΗ ΠΛΕΥΡΑ ─── */
+  margin-top: 1rem;        /* Σπρώχτηκε πιο κοντά στο πάνω μέρος της οθόνης */
+  margin-bottom: 2.5rem;
+}
+
+.team-container {
+  display: grid;
+   grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;      /* Μειώθηκε το κενό μεταξύ τους (από 2.5rem σε 1.5rem) */
+  grid-auto-rows: auto;
+  max-width: 65vw;
+  margin: 0 auto;
+  margin-left: 18vw;
+  margin-top: -1.5rem !important;
+}
+
+.team-container .team-card:nth-child(n+4) {
+  grid-column: auto;
+}
+
+.team-card {
+
+  background: rgba(0, 15, 30, 0.5);
+  border: 2px solid rgba(0, 140, 255, 0.5);
+  border-radius: 18px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 0 1.5rem rgba(0, 162, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1.2rem;
+  height: 220px;
+}
+
+.team-card img {
+  width: 80%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.team-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.team-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.team-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 2.5rem rgba(0, 162, 255, 0.6);
+}
+
+
+@keyframes popIn {
+    from { transform: scale(.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Animation για pop-in */
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* DRIFT Site Original Design by Marios-Rafail Souris - 2026 */

@@ -1,0 +1,204 @@
+/* RESPONSIVE */
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .hero2 {
+        margin-left: 0;
+        padding: 60px 20px;
+    }
+    .about-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+  .hero3 {
+    margin-left: 0;
+    padding: 40px 16px;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .hero4 { margin-left: 0; }
+    .small-cards { flex-direction: column; }
+}
+
+/* Responsive για κινητά */
+@media (max-width: 1024px) {
+    .popup-content {
+        padding: 20px;
+    }
+}
+
+
+/*responsive design*/
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+@media (max-width: 1024px) {  
+
+    .hero4 {
+        margin-left: 0;
+        padding: 60px 16px;
+    }
+
+    .big-card {
+        height: 18rem;
+    }
+
+    .small-cards-row {
+        flex-direction: column;
+    }
+
+    .small-card {
+        height: 14rem;
+    }
+
+
+    .hero {
+        margin-left: 0;
+        padding: 100px 20px 60px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-left, .home-right {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .home-right {
+        margin-top: 40px;
+    }
+
+    .hero h1 {
+        font-size: 2.3rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .desc {
+        font-size: 1rem;
+    }
+
+    .but{
+        position: absolute;
+        display: flex;
+        top: 0;
+        left: 0;
+        height: 80px;
+        width: 100%;
+        background: linear-gradient(135deg, #0073ff, #aab5bd, #0f7ef4);
+        z-index: 150;
+    }
+
+    .close{
+        display: block;
+        position: absolute;
+        left: 12px;
+        top: 10px;
+        cursor: pointer;
+    }
+    .sidebar .close{
+        display: block;
+        width: 48px;
+        height: 48px;
+    }
+
+    .nav-toggle {
+        position: absolute;
+        display: flex;
+        left: 12px;
+        top: 7px;
+        z-index: 1000;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        padding: 5px;   
+    }
+    .nav-toggle img {
+        display: block;
+        width: 60px;
+        height: 60px;
+    }
+    .nav-toggle:hover{
+        animation: pop-in 0.7s ease;
+    }
+    .close:hover{
+        animation: pop-in 0.7s ease;
+    }
+    .bac-nav{
+        transform: translateX(-150%);
+    }
+    
+    .head-logo{
+        transform: translateX(-100%);
+    }
+    .hero, 
+    .hero2, 
+    .hero3,
+    .hero4,
+    .hero5,
+    .hero6,
+    .site-footer{
+        margin-left: 0;
+    }
+
+.bac-nav.open {
+    transform: translateX(0); /* Slide-in */
+}
+
+.closetxt{
+    color: #000000;
+    position: absolute;
+    left: 60px;
+    bottom: -37px;
+     font-size: 25px; /* ↑ Μεγαλώνει το κείμενο */
+    font-weight: 600;
+}
+
+.nav-logoText{
+    font-family: 'Roboto', sans-serif;
+    position:absolute;
+    top: 23px;
+    right: 110px;
+    font-size:medium;
+    font-weight: bolder;
+}
+.photologo{
+    position: absolute;
+    right: 0px;
+    bottom: -8px;
+    width: 110px;
+    height: 110px;
+}
+
+html {
+    -webkit-text-size-adjust: 100%; /* Safari/Chrome iOS */
+    -ms-text-size-adjust: 100%;    /* Edge/IE */
+}
+
+}
+
+@media (max-width: 1024px) {
+  .team-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .team-container {
+    grid-template-columns: 1fr;
+  }
+}

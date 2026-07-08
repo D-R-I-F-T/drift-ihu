@@ -1,0 +1,42 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap';
+
+/*
+==========================================
+DRIFT-Website
+Author: Marios-Rafail Souris
+Copyright © 2026
+All rights reserved.
+Unauthorized use prohibited.
+==========================================
+*/
+
+:root {
+  --sidebar-blue: #2b90f5;
+  --sidebar-blue-dark: #1e7bd6;
+  --text-white: #ffffff;
+  --hover-white: #ffffff;
+  --skew-angle: -10deg;
+}
+
+.sidebar, .closediv, .closetxt, .nav-link {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #a3c9f2;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: large;
+  font-weight: bolder;
+  font-style: italic;
+  overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+}

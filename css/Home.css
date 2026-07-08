@@ -1,0 +1,183 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap';
+
+/*
+==========================================
+DRIFT-Website
+Author: Marios-Rafail Souris
+Copyright © 2026
+All rights reserved.
+Unauthorized use prohibited.
+==========================================
+*/
+
+.hero {
+    margin-left: 0;
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #000000, #307df9, #26011f);
+    color: #d0eaff;
+
+    overflow: hidden;
+    z-index: 1; /* Χαμηλότερο από το menu */
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 900;
+}
+
+.hero h1 span {
+    color: #3967ff;
+    text-shadow: 0 0 10px #00060a;
+}
+
+/* LEFT SIDE */
+.home-left {
+    max-width: 55%;
+    margin-left: 18vw;
+}
+
+.subtitle {
+    font-size: 2rem;
+    opacity: 0.9;
+    margin: 15px 0;
+}
+
+.desc {
+    font-size: 2rem;
+    opacity: 0.85;
+}
+
+/* BUTTON */
+.cta-button {
+    padding: 12px 22px;
+    background: #2887ec;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: #4db0ff;
+    box-shadow: 0 0 15px #4db0ff;
+}
+
+
+/* RIGHT SIDE */
+.home-right {
+    width: 35%;
+    max-width: 380px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 2px solid #2887ec;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 0 18px rgba(0, 140, 255, 0.4);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 12px rgba(0, 162, 255, 0.6), 0 0 22px rgba(0, 162, 255, 0.4), inset 0 0 12px rgba(0, 162, 255, 0.3); 
+    animation: neonPulse 2.4s infinite ease-in-out;
+
+}
+
+.live-title {
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.live-dot {
+    width: 12px;
+    height: 12px;
+    background: red;
+    border-radius: 50%;
+    animation: blink 1s infinite;
+    box-shadow: 0 0 8px red;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+}
+
+/* LIVE BOX */
+.live-box {
+    background: rgba(0,0,0,0.35);
+    border: 2px solid #2887ec;
+    padding: 20px;
+    border-radius: 12px;
+    color: #d8edff;
+    box-shadow: 0 0 15px rgba(0,140,255,0.3);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.live-box h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #59c3ff;
+}
+
+.live-box p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.read-more {
+    display: inline-block;
+    color: #fff;
+    background: #2887ec;
+    border-radius: 2px;
+    padding: 8px 12px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 0.95rem;
+}
+
+.read-more:hover {
+    background: #4db0ff;
+    box-shadow: 0 0 12px #4db0ff;
+}
+
+/*WTF*/
+.loading {
+    opacity: 0.7;
+    font-size: 0.95rem;
+}
+
+.neon-line {
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    background: #2887ec;
+    box-shadow: 0 0 15px #2887ec;
+    animation: neonPulse 2s infinite;
+}
+
+.left-line { left: 0; }
+.right-line { right: 0; }
+
+@keyframes neonPulse {
+    0%, 100% { opacity: 0.7; box-shadow: 0 0 10px #2887ec; }
+    50% { opacity: 1; box-shadow: 0 0 20px #58b5ff; }
+}
+
+.live-box p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+/* SMALL NEON PULSE */
+.live-box {
+    animation: pulseGlow 3s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 14px rgba(0,140,255,0.25); }
+    50% { box-shadow: 0 0 25px rgba(0,140,255,0.45); }
+    100% { box-shadow: 0 0 14px rgba(0,140,255,0.25); }
+}

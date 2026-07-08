@@ -1,0 +1,58 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap';
+
+/*
+==========================================
+DRIFT-Website
+Author: Marios-Rafail Souris
+Copyright © 2026
+All rights reserved.
+Unauthorized use prohibited.
+==========================================
+*/
+
+.hero2 {
+    margin-left: 0;
+    height: 100vh;
+    padding: 2rem 3rem;
+    background: linear-gradient(135deg, #2a6aff, #0a1624, #1c5192);
+    color: #d0eaff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.about-container {
+    display: flex;
+    margin-left: 18vw;
+    max-width: 100vw;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+    font-size: 1.5rem;
+    line-height: 1.7;
+}
+
+.about-text h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #59c3ff;
+    text-shadow: 0 0 15px rgba(0, 140, 255, 0.6);
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 18px;
+    box-shadow: 0 0 25px rgba(0,140,255,0.4);
+    animation: neonPulse 2.4s infinite ease-in-out;
+}
